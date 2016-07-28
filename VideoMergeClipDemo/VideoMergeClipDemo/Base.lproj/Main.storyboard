@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQM-GB-fxd">
+                                <rect key="frame" x="45" y="135" width="30" height="30"/>
+                                <state key="normal" title="合并"/>
+                                <connections>
+                                    <action selector="mergeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m0G-a1-odr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-RM-QZ2">
+                                <rect key="frame" x="45" y="435" width="30" height="30"/>
+                                <state key="normal" title="裁剪"/>
+                                <connections>
+                                    <action selector="clipClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9r-Gv-MOd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ9-Q7-lUk" customClass="ZPVideoPlaybackView">
+                                <rect key="frame" x="440" y="105" width="160" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ORh-eU-Qu8"/>
+                                    <constraint firstAttribute="width" constant="160" id="cH9-wQ-d0W"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMG-Fd-VAZ" customClass="ZPVideoPlaybackView">
+                                <rect key="frame" x="440" y="405" width="160" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="XOa-nD-Nok"/>
+                                    <constraint firstAttribute="width" constant="160" id="tks-Cf-2Av"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MQM-GB-fxd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="Civ-N4-gyo"/>
+                            <constraint firstItem="qcP-RM-QZ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.2" id="GKM-pf-KVQ"/>
+                            <constraint firstItem="kJ9-Q7-lUk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="cPj-Cv-H4l"/>
+                            <constraint firstAttribute="trailing" secondItem="EMG-Fd-VAZ" secondAttribute="trailing" id="ff5-lN-8SJ"/>
+                            <constraint firstItem="qcP-RM-QZ2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="pHo-dT-qKs"/>
+                            <constraint firstItem="MQM-GB-fxd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.2" id="ptp-ZU-IiK"/>
+                            <constraint firstAttribute="trailing" secondItem="kJ9-Q7-lUk" secondAttribute="trailing" id="rxK-LZ-GHg"/>
+                            <constraint firstItem="EMG-Fd-VAZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="wOP-ot-Ob7"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="buttonClip" destination="qcP-RM-QZ2" id="pvh-lZ-aTp"/>
+                        <outlet property="buttonMerge" destination="MQM-GB-fxd" id="Wjr-26-ViK"/>
+                        <outlet property="clipVideoView" destination="EMG-Fd-VAZ" id="Zmp-Ve-zTS"/>
+                        <outlet property="mergeVideoView" destination="kJ9-Q7-lUk" id="lWo-10-9Jj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="458"/>
+        </scene>
+    </scenes>
+</document>
